@@ -53,3 +53,22 @@ This Dockerfile sets up the necessary environment variables and installs the Exp
 Note: You may need to customize the Dockerfile further based on your specific requirements and dependencies.
 
 Feel free to reach out if you need any further assistance!
+
+## Customization
+
+gradle.properties is included into the based into, any changes (if needed) can be done by [command-line flags](https://docs.gradle.org/current/userguide/command_line_interface.html#command_line_interface)
+
+### Predefined properties:
+
+```txt
+org.gradle.jvmargs=-Xmx6g -XX:MaxPermSize=512m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
+org.gradle.parallel=false
+org.gradle.configureondemand=true
+org.gradle.daemon=false
+```
+
+Can be configurable by 
+- `-Dorg.gradle.jvmargs`
+- `--parallel`, `--no-parallel`
+- `--configure-on-demand`, `--no-configure-on-demand` 
+- `--daemon`, `--no-daemon`
